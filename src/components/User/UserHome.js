@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import UserList from './UserList';
 import { useNavigate } from 'react-router-dom';
 import { storeUser } from '../../services/userService';
+import Header from '../Header/Header';
 
 const UserIndex = () => {    
     const navigate = useNavigate();
@@ -55,8 +56,8 @@ const UserIndex = () => {
 
     return (
         <div className="container">
-            <h2 className='w-100 d-flex justify-content-center p-3'>Usuários | iHero</h2>
-                <div className='row'>
+                <Header title="Usuários"/>
+                <div className='row pt-4'>
                     <div className='col-md-4'>
                         <h3>Informe Dados do Usuário</h3>
                         <form>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getById, updateUser } from '../../services/userService';
+import Header from '../Header/Header';
 
 const UserEdit = () => {   
     const navigate = useNavigate();
@@ -64,8 +65,8 @@ const UserEdit = () => {
 
     return(
         <div className='container'>
-            <h1>Editar</h1>
-            <div className='col-12'>
+            <Header title="Editar Usuário"/>
+            <div className='col-12 pt-4'>
                 <form>
                     {errorMessage && <div className='text-danger'>{errorMessage}</div>}
                     <div className='row'>

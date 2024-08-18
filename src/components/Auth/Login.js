@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, logout } from '../../services/authService';
+import { login } from '../../services/authService';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -11,10 +11,6 @@ const Login = () => {
     });    
     
     const [errorMessage, setErrorMessage] = useState()
-
-    useEffect(() => {
-        logout(); 
-    })
     
     const changeUserFieldHandler = (e) => {        
         setUserField({
@@ -35,9 +31,9 @@ const Login = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container d-flex justify-content-center">
             <main className="form-signin">
-                <div className='col-3 py-5'>
+                <div className='col-12 py-5'>
                     <h1 className="h3 mb-3 fw-normal">Login | iHero</h1>
 
                     <div className="form-floating pb-3">

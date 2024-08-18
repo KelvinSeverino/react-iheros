@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getById } from '../../services/userService';
+import Header from '../Header/Header';
 
 const UserView = () => {
     const {id} = useParams();
@@ -24,10 +25,9 @@ const UserView = () => {
  
     return <div>
         <div className="container">
-            <div className='row'>
+            <Header title="Usuário"/>
+            <div className='row pt-4'>
                 <div className='col-md-12'>
- 
-                    <h1>Usuário</h1>
                     <table className="table">
                         <thead>
                             <tr>
