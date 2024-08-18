@@ -2,6 +2,20 @@ import axios from "axios";
 
 const usersAPI = axios.create({baseURL: "http://localhost:3001/users"})
 
+// Interceptor para adicionar o token de autenticação em todas as requisições
+usersAPI.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            config.headers['authorization'] = `${token}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
 async function getUsers() {    
     try {
         const response = await usersAPI.get("/")   
