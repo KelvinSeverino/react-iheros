@@ -20,7 +20,7 @@ function Header({ title }) {
 
                     <ul className="nav">
                         <li className="nav-item">
-                            <button className='btn btn-primary btn-sm' onClick={()=>exit()}>Logout</button>
+                            <button className='btn btn-dark btn-sm' onClick={()=>exit()}>Logout</button>
                         </li>
                     </ul>
                 </div>

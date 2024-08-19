@@ -16,6 +16,9 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import HeroIndex from "./components/Hero/HeroHome";
 import HeroView from "./components/Hero/HeroView";
 import HeroEdit from "./components/Hero/HeroEdit";
+import BattleRealTime from "./components/Battle/BattleRealTime";
+import BattleFinished from "./components/Battle/BattleFinished";
+
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           <Route exact path="/heros" element={<ProtectedRoute element={HeroIndex}/>} />
           <Route exact path="/heros/view/:id" element={<ProtectedRoute element={HeroView}/>} />
           <Route exact path="/heros/edit/:id" element={<ProtectedRoute element={HeroEdit}/>} />
+
+          <Route exact path="/battlesInRealTime" element={<ProtectedRoute element={BattleRealTime}/>} />
+          <Route exact path="/battlesFinished" element={<ProtectedRoute element={BattleFinished}/>} />
 
           <Route path="*" element={<p>Path not resolved</p>} />
         </Routes>
