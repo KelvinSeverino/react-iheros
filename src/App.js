@@ -13,6 +13,9 @@ import UserEdit from "./components/User/UserEdit";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import HeroIndex from "./components/Hero/HeroHome";
+import HeroView from "./components/Hero/HeroView";
+import HeroEdit from "./components/Hero/HeroEdit";
 
 function App() {
   return (
@@ -26,6 +29,10 @@ function App() {
           <Route exact path="/users" element={<ProtectedRoute element={UserIndex}/>} />
           <Route exact path="/users/view/:id" element={<ProtectedRoute element={UserView}/>} />
           <Route exact path="/users/edit/:id" element={<ProtectedRoute element={UserEdit}/>} />
+
+          <Route exact path="/heros" element={<ProtectedRoute element={HeroIndex}/>} />
+          <Route exact path="/heros/view/:id" element={<ProtectedRoute element={HeroView}/>} />
+          <Route exact path="/heros/edit/:id" element={<ProtectedRoute element={HeroEdit}/>} />
 
           <Route path="*" element={<p>Path not resolved</p>} />
         </Routes>

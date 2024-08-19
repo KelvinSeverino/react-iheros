@@ -12,14 +12,14 @@ function Header({ title }) {
 
     return (
         <div className="container">
-            <nav class="py-2 bg-light border-bottom">
-                <div class="container d-flex flex-wrap">
-                    <div class="d-flex justify-content-center flex-grow-1">
-                        <span class="nav-text"><strong>{ title } | iHero</strong></span>
+            <nav className="py-2 bg-light border-bottom">
+                <div className="container d-flex flex-wrap">
+                    <div className="d-flex justify-content-center flex-grow-1">
+                        <span className="nav-text"><strong>{ title } | iHero</strong></span>
                     </div>
 
-                    <ul class="nav">
-                        <li class="nav-item">
+                    <ul className="nav">
+                        <li className="nav-item">
                             <button className='btn btn-primary btn-sm' onClick={()=>exit()}>Logout</button>
                         </li>
                     </ul>
