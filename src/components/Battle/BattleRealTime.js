@@ -20,7 +20,7 @@ const BattleRealTime = () => {
 
         const intervalId = setInterval(() => {
             fetchBattlesInRealTime();
-        }, 30000); // 30000 ms = 30 segundos
+        }, 5000); // 5000 ms = 5 segundos
 
         return () => clearInterval(intervalId);
     }, [])  
