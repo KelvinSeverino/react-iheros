@@ -1,4 +1,5 @@
 import axios from "axios";
+import { jwtDecode } from 'jwt-decode';
 
 const registerAPI = axios.create({baseURL: "http://localhost:3001/register"})
 const loginAPI = axios.create({baseURL: "http://localhost:3001/login"})
@@ -34,8 +35,16 @@ function logout()
     localStorage.removeItem('token');
 }
 
+function decodeToken()
+{
+    const token = localStorage.getItem('token');
+    const decoded = jwtDecode(token);
+    return decoded;
+}
+
 export {
     register,
     login,
     logout,
+    decodeToken
 }
