@@ -42,9 +42,33 @@ function decodeToken()
     return decoded;
 }
 
+function isTokenValid() {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        return false;
+    }
+
+    try {
+        const decoded = jwtDecode(token);
+
+        const currentTime = Math.floor(Date.now() / 1000); // Tempo atual em segundos
+        if (decoded.exp < currentTime) {
+            localStorage.removeItem('token');
+            return false;
+        }
+
+        return true;
+    } catch (e) {
+        console.error("Erro ao decodificar o token:", e);
+        return false;
+    }
+}
+
 export {
     register,
     login,
     logout,
-    decodeToken
+    decodeToken,
+    isTokenValid
 }
